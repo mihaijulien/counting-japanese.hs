@@ -1,0 +1,1 @@
+# counting-japanese.hs
