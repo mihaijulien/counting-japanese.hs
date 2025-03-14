@@ -1,6 +1,10 @@
 module Main (main) where
 
-import Lib
+import Transform
 
 main :: IO ()
-main = someFunc
+main = do
+    putStrLn("Japanese Numbers and Counters")
+    putStrLn("Usage example: \n Input: 2 cats \n Output: ni 二 匹 (ひき) / hiki \n\n")
+    command <- getLine
+    putStrLn $ transform command
