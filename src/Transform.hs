@@ -1,6 +1,14 @@
-module Transform where
+module Transform 
+        ( transform
+        , separateNumsAndWords
+        , assignCounter
+        , num2words
+        ) where
 
 import Counters
+import qualified Data.Map as Map
+import qualified Data.Set as Set
+import Data.Maybe (fromJust)
 
 transform :: String -> String
 transform s = japaneseStr
@@ -8,7 +16,7 @@ transform s = japaneseStr
             tuple = separateNumsAndWords s
             counter = assignCounter (snd tuple)
             numeral = num2words (fst tuple)
-            japaneseStr = unwords [numeral, counter]
+            japaneseStr = unwords [numeral, fromJust counter]
 
 
 separateNumsAndWords :: String -> (Int, String)
@@ -17,10 +25,10 @@ separateNumsAndWords s = (num, word)
             sList = words s
             rInt :: String -> Int
             rInt = read
-            num = rInt (head sList)
-            word = tail sList
+            num = rInt (sList !! 0)
+            word = sList !! 1
 
-assignCounter :: String -> String
+assignCounter :: String -> Maybe String
 assignCounter s 
         -- if s is an element of cylindricalObjects set -> return the counter from the cylindricalObjects map
         | Set.member s cylindricalObjects = Map.lookup "cylindricalObjects" counters 
@@ -31,7 +39,7 @@ assignCounter s
         | Set.member s thinFlatObjects = Map.lookup "thinFlatObjects" counters
         | Set.member s age = Map.lookup "age" counters
         | Set.member s vehiclesAndDevices = Map.lookup "vehiclesAndDevices" counters
-        | otherwise = "not implemented"
+        | otherwise = Nothing  --"not implemented"
 
 num2words :: Int -> String
 num2words num = case Map.lookup num numberToRomaji of

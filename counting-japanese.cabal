@@ -9,9 +9,9 @@ version:        0.1.0.0
 description:    Please see the README on GitHub at <https://github.com/githubuser/counting-japanese#readme>
 homepage:       https://github.com/githubuser/counting-japanese#readme
 bug-reports:    https://github.com/githubuser/counting-japanese/issues
-author:         Author name here
-maintainer:     example@example.com
-copyright:      2025 Author name here
+author:         Julien Mihai
+maintainer:     mihaijulien@example.com
+copyright:      2025 Julien Mihai
 license:        BSD-3-Clause
 license-file:   LICENSE
 build-type:     Simple
@@ -25,7 +25,9 @@ source-repository head
 
 library
   exposed-modules:
+      Counters
       Lib
+      Transform
   other-modules:
       Paths_counting_japanese
   autogen-modules:
@@ -35,6 +37,7 @@ library
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
   build-depends:
       base >=4.7 && <5
+    , containers
   default-language: Haskell2010
 
 executable counting-japanese-exe
@@ -48,6 +51,7 @@ executable counting-japanese-exe
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
+    , containers
     , counting-japanese
   default-language: Haskell2010
 
@@ -55,6 +59,7 @@ test-suite counting-japanese-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
+      TransformTest
       Paths_counting_japanese
   autogen-modules:
       Paths_counting_japanese
@@ -63,5 +68,8 @@ test-suite counting-japanese-test
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
+    , containers
     , counting-japanese
+    , hspec
+    , hspec-discover
   default-language: Haskell2010

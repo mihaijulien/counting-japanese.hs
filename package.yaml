@@ -2,9 +2,9 @@ name:                counting-japanese
 version:             0.1.0.0
 github:              "githubuser/counting-japanese"
 license:             BSD-3-Clause
-author:              "Author name here"
-maintainer:          "example@example.com"
-copyright:           "2025 Author name here"
+author:              "Julien Mihai"
+maintainer:          "mihaijulien@example.com"
+copyright:           "2025 Julien Mihai"
 
 extra-source-files:
 - README.md
@@ -21,6 +21,7 @@ description:         Please see the README on GitHub at <https://github.com/gith
 
 dependencies:
 - base >= 4.7 && < 5
+- containers
 
 ghc-options:
 - -Wall
@@ -57,3 +58,5 @@ tests:
     - -with-rtsopts=-N
     dependencies:
     - counting-japanese
+    - hspec
+    - hspec-discover 
