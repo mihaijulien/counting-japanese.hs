@@ -26,7 +26,6 @@ source-repository head
 library
   exposed-modules:
       Counters
-      Lib
       Transform
   other-modules:
       Paths_counting_japanese

@@ -7,8 +7,8 @@ spec :: Spec
 spec = do
   describe "num2words" $ do
     it "takes an integer as input and outputs the string representation of it" $ do
-      num2words 1 `shouldBe` "ichi"
-      num2words 91 `shouldBe` "kyuujuuichi"
+      num2words 1 `shouldBe` "ichi 一"
+      num2words 91 `shouldBe` "kyuujuuichi 九十一"
 
   describe "separateNumsAndWords" $ do
     it "separates numbers from words" $ do
@@ -25,5 +25,5 @@ spec = do
 
   describe "transform" $ do
     it "en -> jp" $ do
-        transform "2 cats" `shouldBe` "ni 匹 (ひき) / hiki"
-        transform "50 cars" `shouldBe` "gojuu 台 (だい) / dai"
+        transform "2 cats" `shouldBe` "ni 二 匹 (ひき) / hiki"
+        transform "50 cars" `shouldBe` "gojuu 五十 台 (だい) / dai"

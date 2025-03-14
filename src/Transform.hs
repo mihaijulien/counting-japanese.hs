@@ -42,6 +42,6 @@ assignCounter s
         | otherwise = Nothing  --"not implemented"
 
 num2words :: Int -> String
-num2words num = case Map.lookup num numberToRomaji of
-        Just romaji -> romaji
+num2words num = case Map.lookup num numberToRomajiKanji of
+        Just (romaji, kanji) -> romaji ++ " " ++ kanji
         Nothing -> "not implemented"
