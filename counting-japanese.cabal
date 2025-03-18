@@ -27,6 +27,7 @@ library
   exposed-modules:
       Counters
       Transform
+      UI
   other-modules:
       Paths_counting_japanese
   autogen-modules:
@@ -36,7 +37,15 @@ library
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
   build-depends:
       base >=4.7 && <5
+    , brick
     , containers
+    , cursor
+    , directory
+    , microlens
+    , microlens-mtl
+    , microlens-th
+    , text
+    , vty
   default-language: Haskell2010
 
 executable counting-japanese-exe
@@ -50,8 +59,16 @@ executable counting-japanese-exe
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
+    , brick
     , containers
     , counting-japanese
+    , cursor
+    , directory
+    , microlens
+    , microlens-mtl
+    , microlens-th
+    , text
+    , vty
   default-language: Haskell2010
 
 test-suite counting-japanese-test
@@ -67,8 +84,16 @@ test-suite counting-japanese-test
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
+    , brick
     , containers
     , counting-japanese
+    , cursor
+    , directory
     , hspec
     , hspec-discover
+    , microlens
+    , microlens-mtl
+    , microlens-th
+    , text
+    , vty
   default-language: Haskell2010
