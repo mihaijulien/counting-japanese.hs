@@ -1,5 +1,7 @@
 # counting-japanese.hs
 
+I'm currently learning japanese so I made this app to practice the number counters and some Haskell.
+
 ![counting-japanese](demo.gif)
 
 - Build & run
@@ -17,7 +19,31 @@ stack test
 - Debugging and testing in Haskell: [https://haskell.dev/article/Debugging_and_testing_in_Haskell_Tips_and_tricks.html](https://haskell.dev/article/Debugging_and_testing_in_Haskell_Tips_and_tricks.html)
 - Stack getting started: [https://docs.haskellstack.org/en/stable/tutorial/hello_world_example/](https://docs.haskellstack.org/en/stable/tutorial/hello_world_example/)
 
-## Japanese :)
+<details>
+<summary> Japanese :)</summary>
+
+
+### Regular Kana
+
+Hiragana
+
+| .   | w   | r   | y   | m   | h   | n   | t   | s   | k   |     |       |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ----- |
+| ん  | わ  | ら  | や  | ま  | は  | な  | た  | さ  | か  | あ  | **a** |
+|     |     | り  |     | み  | ひ  | に  | ち  | し  | き  | ぃ  | **i** |
+|     |     | る  | ゆ  | む  | ふ  | ぬ  | つ  | す  | く  | う  | **u** |
+|     |     | れ  |     | め  | へ  | ね  | て  | せ  | け  | え  | **e** |
+|     | を  | ろ  | よ  | も  | ほ  | の  | と  | そ  | こ  | お  | **o** |
+
+Katakana
+
+| .   | w   | r   | y   | m   | h   | n   | t   | s   | k   |     |       |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ----- |
+| ン  | ワ  | ラ  | ヤ  | マ  | ハ  | ナ  | タ  | サ  | カ  | ア  | **a** |
+|     |     | リ  |     | ミ  | ヒ  | に  | チ  | シ  | キ  | イ  | **i** |
+|     |     | ル  | ユ  | ム  | フ  | ヌ  | ツ  | ス  | ク  | ウ  | **u** |
+|     |     | レ  |     | メ  | ヘ  | ネ  | テ  | セ  | ケ  | エ  | **e** |
+|     | ヲ  | ロ  | ヨ  | モ  | ホ  | ノ  | ト  | ソ  | コ  | オ  | **o** |
 
 Items
 
@@ -105,3 +131,5 @@ Media
 
     映[えい]画[が] (movies)
     テレビ (TV)
+
+</details>
