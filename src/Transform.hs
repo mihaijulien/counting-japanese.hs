@@ -8,15 +8,16 @@ module Transform
 import Counters
 import qualified Data.Map as Map
 import qualified Data.Set as Set
-import Data.Maybe (fromJust)
+import Data.List (find)
+import Model.JpNumber (JpNumber(JpNumber), number, kanji, romaji)
 
-transform :: String -> String
-transform s = japaneseStr
-        where
-            tuple = separateNumsAndWords s
-            counter = assignCounter (snd tuple)
-            numeral = num2words (fst tuple)
-            japaneseStr = unwords [numeral, fromJust counter]
+transform :: [JpNumber] -> String -> String
+transform nums s = case assignCounter word of
+    Just counter -> unwords [num2words nums n, counter]
+    Nothing      -> "counter not found"
+  where
+    (n, word) = separateNumsAndWords s
+
 
 
 separateNumsAndWords :: String -> (Int, String)
@@ -41,7 +42,8 @@ assignCounter s
         | Set.member s vehiclesAndDevices = Map.lookup "vehiclesAndDevices" counters
         | otherwise = Nothing  --"not implemented"
 
-num2words :: Int -> String
-num2words num = case Map.lookup num numberToRomajiKanji of
-        Just (romaji, kanji) -> romaji ++ " " ++ kanji
-        Nothing -> "not implemented"
+num2words :: [JpNumber] -> Int -> String
+num2words nums n =
+  case find (\j -> number j == n) nums of
+    Just jp -> romaji jp ++ " " ++ kanji jp
+    Nothing -> "not implemented"

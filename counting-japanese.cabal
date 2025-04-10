@@ -26,6 +26,8 @@ source-repository head
 library
   exposed-modules:
       Counters
+      Database
+      Model.JpNumber
       Transform
       UI
   other-modules:
@@ -44,6 +46,7 @@ library
     , microlens
     , microlens-mtl
     , microlens-th
+    , postgresql-simple
     , text
     , vty
   default-language: Haskell2010
@@ -67,6 +70,7 @@ executable counting-japanese
     , microlens
     , microlens-mtl
     , microlens-th
+    , postgresql-simple
     , text
     , vty
   default-language: Haskell2010
@@ -94,6 +98,7 @@ test-suite counting-japanese-test
     , microlens
     , microlens-mtl
     , microlens-th
+    , postgresql-simple
     , text
     , vty
   default-language: Haskell2010

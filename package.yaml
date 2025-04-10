@@ -30,6 +30,7 @@ dependencies:
 - microlens
 - microlens-th
 - microlens-mtl
+- postgresql-simple
 
 ghc-options:
 - -Wall

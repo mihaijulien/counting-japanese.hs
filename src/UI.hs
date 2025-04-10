@@ -15,6 +15,7 @@ import Lens.Micro.TH
 import Lens.Micro.Mtl
 import Brick.Widgets.Core
 import Brick.Util (on)
+import Model.JpNumber (JpNumber(JpNumber))
 
 import Transform
 
@@ -22,6 +23,7 @@ data Name = Edit1 deriving (Ord, Show, Eq)
 data State =
     State {_editor :: E.Editor String Name
           ,_definition :: String
+          ,_jpNumbers    :: [JpNumber]
     }
 
 makeLenses ''State
@@ -59,26 +61,25 @@ drawUI st = [ui]
         ui = C.center $ hBox [countingTable, instructionsTable]
 
 
-search :: String -> String
-search word = "Japanese: " ++ transform word
+-- search :: [JpNumber] -> String
+-- search nums word = "Japanese: " ++ transform nums word
 
 appEvent :: T.BrickEvent Name e -> T.EventM Name State ()
 appEvent e = do
-    editorWidget <- use editor
-    let userInput = unlines (E.getEditContents editorWidget)
-
     case e of
         T.VtyEvent vtye -> case vtye of
             V.EvKey V.KEsc [] -> M.halt
             V.EvKey V.KEnter [] -> do
-                definition .= search userInput
+                editorWidget <- use editor
+                let userInput = unlines (E.getEditContents editorWidget)
+
+                nums <- use jpNumbers
+                definition .= transform nums userInput
                 editor .= E.editor Edit1 (Just 1) ""
                 return ()
-            _ -> do
-                zoom editor $ E.handleEditorEvent e
-                return ()
-        _ -> do
-            return ()
+
+            _ -> zoom editor $ E.handleEditorEvent e
+        _ -> return ()
 
 definitionAttr :: A.AttrName
 definitionAttr = A.attrName "blackOnWhite"
@@ -98,7 +99,8 @@ theApp =
           , M.appAttrMap        = const appStyle
           }
 
-initialState :: State
-initialState =
+initialState :: [JpNumber] -> State
+initialState nums =
     State (E.editor Edit1 (Just 1) "")
           ("Japanese form here")
+          nums

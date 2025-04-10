@@ -18,6 +18,11 @@ stack test
 - Hspec: [https://github.com/hspec/hspec-example/tree/main](https://github.com/hspec/hspec-example/tree/main)
 - Debugging and testing in Haskell: [https://haskell.dev/article/Debugging_and_testing_in_Haskell_Tips_and_tricks.html](https://haskell.dev/article/Debugging_and_testing_in_Haskell_Tips_and_tricks.html)
 - Stack getting started: [https://docs.haskellstack.org/en/stable/tutorial/hello_world_example/](https://docs.haskellstack.org/en/stable/tutorial/hello_world_example/)
+**postgresql-simple**:
+- [https://begriffs.com/posts/2013-09-14-haskell-postgresql-simple-examples-part_13.html](https://begriffs.com/posts/2013-09-14-haskell-postgresql-simple-examples-part_13.html)
+- [https://github.com/begriffs/haskell-postgres-examples/tree/master](https://github.com/begriffs/haskell-postgres-examples/tree/master)
+- [https://blog.ocharles.org.uk/blog/posts/2012-12-03-postgresql-simple.html](https://blog.ocharles.org.uk/blog/posts/2012-12-03-postgresql-simple.html)
+- [https://github.com/smasuda/haskell-postgresql-simple-example](https://github.com/smasuda/haskell-postgresql-simple-example)
 
 <details>
 <summary> Japanese :)</summary>
