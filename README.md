@@ -7,6 +7,7 @@ I'm currently learning japanese so I made this app to practice the number counte
 - Build & run
 
 ``` shell
+docker-compose up
 stack build
 stack exec counting-japanese
 stack test
