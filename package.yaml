@@ -31,6 +31,7 @@ dependencies:
 - microlens-th
 - microlens-mtl
 - postgresql-simple
+- dotenv
 
 ghc-options:
 - -Wall
